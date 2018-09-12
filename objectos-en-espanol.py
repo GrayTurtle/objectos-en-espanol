@@ -36,6 +36,12 @@ payload = \
 
 # Post requests to the APIs along with the parsing of the response
 vision_request = requests.post(url=API_VISION, params={'key': API_KEY}, headers={'Content-Type': 'application/json'}, data=json.dumps(payload))
+
+for key in vision_request.json()["responses"][0]:
+	if key == "error": 
+		print("Error with image")
+		sys.exit(0)
+
 english_word = vision_request.json()["responses"][0]["labelAnnotations"][0]["description"].capitalize()
 
 translate_request = requests.post(url=API_TRANSLATE, data={'key': API_KEY, 'source': 'en', 'target': 'es', 'q': english_word})
