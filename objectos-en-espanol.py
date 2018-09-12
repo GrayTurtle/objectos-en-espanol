@@ -38,7 +38,7 @@ payload = \
 vision_request = requests.post(url=API_VISION, params={'key': API_KEY}, headers={'Content-Type': 'application/json'}, data=json.dumps(payload))
 
 if list(vision_request.json()["responses"][0])[0] == "error": 
-	print("Error with image")
+	print("Error: Bad image")
 	sys.exit(0)
 
 english_word = vision_request.json()["responses"][0]["labelAnnotations"][0]["description"].capitalize()
