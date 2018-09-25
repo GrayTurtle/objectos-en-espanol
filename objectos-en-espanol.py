@@ -9,7 +9,7 @@ import json
 import base64
 import sys
 
-API_KEY = "AIzaSyDzvkjS7zn7WqucXeJ5_yoARbZj4afSXVo"
+API_KEY = "API_KEY"
 API_VISION = "https://vision.googleapis.com/v1/images:annotate"
 API_TRANSLATE = "https://www.googleapis.com/language/translate/v2"
 
